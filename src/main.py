@@ -4,10 +4,15 @@ from src.resolver.time_resolver import explain_time_conflict, suggest_time_fixes
 from src.detectors.analyzer import analyze_tasks
 from src.utils.loader import load_tasks_from_json
 from src.prioritizer.prioritizer import conflict_prioritizer
+from src.scheduler.auto_shcedule import auto_scheduler
+
 tasks = load_tasks_from_json("data/tasks.json")
 
 results = analyze_tasks(tasks)
 prioritized = conflict_prioritizer(results)
+
+auto_scheduler(tasks, prioritized)
+
 
 for conflict in prioritized:
     c_type = conflict["type"]

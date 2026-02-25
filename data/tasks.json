@@ -1,0 +1,25 @@
+{
+  "tasks": [
+    {"id":"T1","name":"Kickoff meeting","owner":"Alice","start_time":9,"duration":1,"deadline":10,"dependencies":["T2"]},
+    {"id":"T2","name":"Requirements draft","owner":"Alice","start_time":10,"duration":2,"deadline":14,"dependencies":["T1"]},
+    {"id":"T3","name":"Design sketch","owner":"Bob","start_time":9,"duration":3,"deadline":13,"dependencies":["T2"]},
+    {"id":"T4","name":"API spec","owner":"Charlie","start_time":11,"duration":2,"deadline":16,"dependencies":["T2"]},
+    {"id":"T5","name":"Frontend prototype","owner":"Alice","start_time":13,"duration":4,"deadline":18,"dependencies":["T3","T4"]},
+    {"id":"T6","name":"Database schema","owner":"Bob","start_time":12,"duration":2,"deadline":15,"dependencies":["T4"]},
+    {"id":"T7","name":"Integration test","owner":"Charlie","start_time":15,"duration":3,"deadline":20,"dependencies":["T5","T6"]},
+    {"id":"T8","name":"User docs","owner":"Eve","start_time":10,"duration":3,"deadline":14,"dependencies":["T2"]},
+    {"id":"T9","name":"Marketing plan","owner":"Mallory","start_time":9,"duration":4,"deadline":12,"dependencies":[]},
+    {"id":"T10","name":"Compliance review","owner":"Alice","start_time":11,"duration":2,"deadline":13,"dependencies":["T8"]},
+    {"id":"T11","name":"Bug fixing sprint","owner":"Bob","start_time":14,"duration":3,"deadline":17,"dependencies":["T7"]},
+    {"id":"T12","name":"Release prep","owner":"Charlie","start_time":17,"duration":2,"deadline":18,"dependencies":["T11","T10"]},
+    {"id":"T13","name":"Post-release audit","owner":"Eve","start_time":19,"duration":2,"deadline":22,"dependencies":["T12"]},
+    {"id":"T14","name":"Hotfix A","owner":"Alice","start_time":13,"duration":2,"deadline":14,"dependencies":[]},
+    {"id":"T15","name":"Hotfix B","owner":"Alice","start_time":13,"duration":2,"deadline":14,"dependencies":["T14"]},
+    {"id":"T16","name":"Data migration","owner":"Bob","start_time":10,"duration":6,"deadline":16,"dependencies":[]},
+    {"id":"T17","name":"Team retrospective","owner":"Mallory","start_time":20,"duration":1,"deadline":21,"dependencies":["T13"]},
+    {"id":"T18","name":"Security scan","owner":"Charlie","start_time":9,"duration":2,"deadline":11,"dependencies":["T4"]},
+    {"id":"T19","name":"Load test","owner":"Bob","start_time":11,"duration":3,"deadline":14,"dependencies":["T6"]},
+    {"id":"T20","name":"Circular test A","owner":"Eve","start_time":8,"duration":1,"deadline":10,"dependencies":["T21"]}
+  ],
+  "note": "This dataset includes many realistic overlaps and dependencies. T20 references T21 to intentionally create a missing-dependency / circular example; you can add T21 to create a full circular loop if desired."
+}
